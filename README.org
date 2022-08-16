@@ -8,17 +8,19 @@ the Go layer or Spacemacs.
 Import the module like this:
 
 #+begin_src nix
-  imports = [
-    (builtins.fetchTarball {
-      url =
-        "https://github.com/szamuboy/go-dev-tools/archive/fef99eb09830a7331366780f3d06ca612e53ece4.zip";
-      sha256 = "sha256:117qciwb2wx62wxirvqxjmfjkwzl868gajda4nq35iaxj6347gss";
-    })
-  ];
+  {
+    imports = [
+      (builtins.fetchTarball {
+        url =
+          "https://github.com/szamuboy/go-dev-tools/archive/fef99eb09830a7331366780f3d06ca612e53ece4.zip";
+        sha256 = "sha256:117qciwb2wx62wxirvqxjmfjkwzl868gajda4nq35iaxj6347gss";
+      })
+    ];
+  }
 #+end_src
 
 Then you can enable or disable the tools:
 
 #+begin_src nix
-  programs.go-dev-tools.enable = true;
+  { programs.go-dev-tools.enable = true; }
 #+end_src
